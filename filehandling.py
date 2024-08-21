@@ -76,7 +76,11 @@ def create_file(filename):
             d.write("new file created")
         print("file succesfully created ")
     except IOError:
-        print("Error: could not create file , file already exists!!! ")
+        print("Error: could not create file  ")
+    except FileExistsError:
+        print("Error : File already exits")
+    except Exception as e:
+        print("Error : ",e)
     finally:
         print("create function ends!!!")
 filename = "hello.txt"
