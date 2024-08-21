@@ -21,7 +21,7 @@ def read_file(filename):
     finally:
         print("read function ends")
 filename = "demofile.txt"
-read_file(filename)
+# read_file(filename)
     
 #Write File
 def write_file(filename,content):
@@ -37,7 +37,7 @@ def write_file(filename,content):
         print("write function ends")
 filename = "defile.txt"
 content = "this file is written and created newly "
-write_file(filename,content)
+# write_file(filename,content)
 
 #Append File
 def append_file(filename , content):
@@ -52,11 +52,12 @@ def append_file(filename , content):
         print("append function ends")
 filename = "defile.txt"
 content = "\nappend"        
-append_file(filename, content)
+# append_file(filename, content)
 
 #Delete File
-import os 
+
 def delete_file(filename):
+    import os 
     try:
         os.remove(filename)
         print("file successfully deleted")
@@ -67,5 +68,21 @@ def delete_file(filename):
     finally:
         print("delete function ends")
 filename = "hello.txt"
-delete_file(filename)
+# delete_file(filename)
 
+def create_file(filename):
+    try :
+        with open(filename,"x") as d:
+            d.write("new file created")
+        print("file succesfully created ")
+    except IOError:
+        print("Error: could not create file , file already exists!!! ")
+    finally:
+        print("create function ends!!!")
+filename = "hello.txt"
+create_file(filename)
+
+# write_file("demofile.txt","write")
+# read_file("demofile.txt")
+# append_file("defile.txt","\nappend")
+# delete_file("defile.txt")
